@@ -45,6 +45,10 @@
             display: inline-block;
             padding: 3px;
         }
+
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
     </style>
 
 </head>
@@ -69,64 +73,77 @@
             </p>
         </div>
     </div>
-    <a class="btn btn-success col-12 rounded-pill mb-3 text-dark" href="https://fahrezonedev.github.io/g-vortex-android/">
-        <strong><i class="fa-solid fa-download"></i> Download</strong>
+    <a class="btn btn-success col-12 rounded-pill mb-3 text-dark" href="https://fahrez.dev" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-download"></i> <strong>Download</strong>
     </a>
     <p style="color: #fafafa" class="m-3 d-flex justify-content-between">
         Description
-        <a
-            class="text-decoration-none text-light collapsed"
-            data-bs-toggle="collapse"
-            href="#collapseExample"
-            aria-expanded="false"
-            aria-controls="collapseExample"
-        >
-            <i class="fa-solid fa-chevron-down"></i>
+        <a class="text-decoration-none text-light collapsed" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="collapseToggle">
+            <i class="fas fa-chevron-down"></i>
         </a>
     </p>
-    <p
-        class="card card-body py-0"
-        style="
-            background-color: transparent;
-            color: #707370;
-            border-radius: 10px;
-            border: none;
-            font-size: 14px;
-        "
-    >
+    <p class="card card-body py-0" style="background-color: transparent; color: #707370; border-radius: 10px; border: none; font-size: 14px;" id="collapseExampleContent">
         Game Booster & Game Space to optimize gaming experience!
     </p>
 
     <div class="collapse" id="collapseExample">
-        <div
-            class="card card-body"
-            style="
-                background-color: #292a29;
-                color: #707370;
-                border-radius: 10px;
-                font-size: 14px;
-            "
-        >
+        <div class="card card-body" style="background-color: #292a29; color: #707370; border-radius: 10px; font-size: 14px;">
             <p>Optimize your Android device for best performance with G-Vortex. Enjoy a better gaming experience with the G-Vortex game booster app. Some features of G-Vortex include:</p>
 
             <ul>
-              <li>Game Space (V-SPACE): Switch to your private game mode interface.</li>
-              <li>Game Filters: Add your favorite games to the game filter. You can manually add them in the Filter Settings.</li>
+                <li>Game Space (V-SPACE): Switch to your private game mode interface.</li>
+                <li>Game Filters: Add your favorite games to the game filter. You can manually add them in the Filter Settings.</li>
             </ul>
 
             <p><strong>Notes:</strong> G-Vortex uses the QUERY_ALL_PACKAGES permission to create a list of applications/games installed on the user's device. This list is used for optimizing applications/games in G-Vortex. The QUERY_ALL_PACKAGES permission is required for G-Vortex's core functions. Without the QUERY_ALL_PACKAGES permission, G-Vortex will not work.</p>
         </div>
     </div>
 
-    <div class="scrollmenu">
-        <img src="assets/cr-1.jpg" alt="Image 1">
-        <img src="assets/cr-2.jpg" alt="Image 2">
-        <img src="assets/cr-3.jpg" alt="Image 3">
-        <img src="assets/cr-4.jpg" alt="Image 4">
+    <p style="color: #fafafa" class="m-3 d-flex justify-content-between">
+        More Games
+        <a class="text-decoration-none text-light collapsed" data-bs-toggle="collapse" href="#moreGamesCollapse" aria-expanded="false" aria-controls="moreGamesCollapse" id="moreGamesToggle">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </p>
+
+    <div class="collapse" id="moreGamesCollapse">
+        <div class="card card-body" style="background-color: #292a29; color: #707370; border-radius: 10px; font-size: 14px;">
+            <div class="scrollmenu">
+                <img src="assets/cr-1.jpg" alt="Image 1">
+                <img src="assets/cr-2.jpg" alt="Image 2">
+                <img src="assets/cr-3.jpg" alt="Image 3">
+                <img src="assets/cr-4.jpg" alt="Image 4">
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-</div>
+    <script>
+        const collapseToggle = document.getElementById('collapseToggle');
+        const collapseExampleContent = document.getElementById('collapseExampleContent');
 
+        collapseToggle.addEventListener('click', function () {
+            collapseToggle.children[0].classList.toggle('rotate-180');
+            const isExpanded = collapseToggle.getAttribute('aria-expanded');
+            if (isExpanded === 'true') {
+                collapseExampleContent.style.display = 'none';
+            } else {
+                collapseExampleContent.style.display = 'block';
+            }
+        });
+
+        const moreGamesToggle = document.getElementById('moreGamesToggle');
+        const moreGamesCollapse = document.getElementById('moreGamesCollapse');
+
+        moreGamesToggle.addEventListener('click', function () {
+            moreGamesToggle.children[0].classList.toggle('rotate-180');
+            const isExpanded = moreGamesToggle.getAttribute('aria-expanded');
+            if (isExpanded === 'true') {
+                moreGamesCollapse.style.display = 'none';
+            } else {
+                moreGamesCollapse.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
