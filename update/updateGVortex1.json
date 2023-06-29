@@ -2,8 +2,8 @@
   "vCode":"3104",
   "title":"Info",
   "subtitle":"Welcome :)",
-  "btnPositive":"Update",
-  "urlPositive":"https://fahrezonedev.github.io",
-  "btnNegative":"Skip",
+  "btnPositive":"Ya!",
+  "urlPositive":"skip",
+  "btnNegative":"false",
   "urlNegative":"skip"
 }
